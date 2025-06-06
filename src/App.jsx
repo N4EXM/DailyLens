@@ -13,17 +13,17 @@ function App() {
 
   return (
     <>
-      <div className='font-poppins bg-background text-text relative'>
+      <div className='w-full h-full min-h-screen font-poppins bg-background text-text relative'>
         <BrowserRouter>
           <Routes>
-            <Route index path='/Home' element={<Home/>}></Route>
+            <Route path='/' element={<Home/>}></Route>
             <Route path='/Search' element={<Search/>}></Route>
             <Route path='/Settings' element={<Settings/>}></Route>
             <Route path='/Bookmarked' element={<Bookmarked/>}></Route>
             <Route path='/News' element={<News/>}></Route>
           </Routes>
+          <Navbar/>
         </BrowserRouter>
-        <Navbar/>
       </div>
     </>
   )
