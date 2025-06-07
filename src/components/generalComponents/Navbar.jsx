@@ -34,7 +34,7 @@ const Navbar = () => {
   return (
     <div className='w-full h-fit p-5 fixed bottom-0 right-0 left-0'>
       
-      <div className='p-2 px-3 flex flex-row bg-text/10 border-2 border-text/5 rounded-3xl text-xs items-center justify-between'>
+      <div className='p-2 px-4 flex flex-row bg-text/10 border-2 border-text/5 rounded-3xl text-xs items-center justify-between'>
         <NavButton
           icon={navButton[0].icon}
           link={navButton[0].link}
@@ -45,10 +45,10 @@ const Navbar = () => {
         />
         {/* create post button */}
         <button className='flex flex-row bg-primary/80 gap-3 pr-5 text-white p-2 items-center justify-start  rounded-full'>
-          <i className='rounded-full text-text flex bg-white p-1'>
+          <i className='rounded-full text-background flex'>
             <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20"  
-              fill="currentcolor" viewBox="0 0 24 24" >
-              <path d="M3 13h8v8h2v-8h8v-2h-8V3h-2v8H3z"></path>
+              fill="currentColor" viewBox="0 0 24 24" >
+              <path d="M13 7h-2v4H7v2h4v4h2v-4h4v-2h-4z"></path><path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"></path>
             </svg>
           </i>
           <p className='font-medium'>Create</p>

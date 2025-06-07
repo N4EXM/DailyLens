@@ -14,9 +14,25 @@
 
     /* colours */
     --color-background: #f8fafc;
-    --color-text: #2e1065;
+    --color-text: oklch(20.8% 0.042 265.755);
     --color-primary: #3b82f6;
     --color-secondary: #60a5fa;
     --color-tertiary: #93c5fd;
 
+    /* text sizes */
+    --text-ssm: 12px;  
+    --text-ssm-line-height: var(--tw-leading, var(--text-sm--line-height));
+    --text-xxs:10px;
+    --text-xxs-line-height: var((--tw-leading, var(--text-xs--line-height)))
+}
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
