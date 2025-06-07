@@ -1,13 +1,13 @@
 import React from 'react'
 import articles from '../../articles'
 
-const BigNewsCard = () => {
+const BigNewsCard = ({articleImage, title, authorImage, authorName, date}) => {
   return (
     <div className='relative text-background'>
 
       <div className='relative w-64'>
         <img 
-          src={articles[0].articleImage} 
+          src={articleImage} 
           className='rounded-xl w-full h-full object-cover' 
         />
         {/* Gradient overlay */}
@@ -15,15 +15,15 @@ const BigNewsCard = () => {
       </div>
 
       <div className='absolute top-[37%] flex flex-col gap-2 p-3 pr-4'>
-        <p className='font-semibold font-poppins text-ssm'>{articles[0].title}</p>
+        <p className='font-semibold font-poppins text-ssm'>{title}</p>
         <div className='w-full h-fit flex flex-row items-center justify-between'>
 
           <div className='w-fit flex flex-row items-center gap-2'>
-            <img className='size-5 rounded-full' src={articles[0].authorImage} alt="" />
-            <p className='text-xxs font-light'>{articles[0].authorName}</p>
+            <img className='size-5 rounded-full' src={authorImage} alt="" />
+            <p className='text-xxs font-light'>{authorName}</p>
           </div>
 
-          <p className='font-light text-background text-xxs'>{articles[0].date}</p>
+          <p className='font-light text-background text-xxs'>{date}</p>
 
         </div>
       </div>
