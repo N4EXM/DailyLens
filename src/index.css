@@ -7,17 +7,28 @@
     --font-poppins: "Poppins";
 
     /* breakpoints */
-    --breakpoint-mo: 320px;
-    --breakpoint-ta: 480px;
-    --breakpoint-sd: 769px;
-    --breakpoint-ld: 1025px;
+    --breakpoint-mmo: 360px; /* medium sized phones */
+    --breakpoint-ta: 480px;  /* tablets */
+    --breakpoint-sd: 769px;  /* small desktops */
+    --breakpoint-ld: 1025px; /* large desktops */
 
     /* colours */
-    --color-background: #f8fafc;
-    --color-text: oklch(20.8% 0.042 265.755);
+
+    /* light */
+    --color-background: #f1f5f9;
+    --color-secBackground: #e2e8f0;
+    --color-text: #0f172a;
     --color-primary: #3b82f6;
     --color-secondary: #60a5fa;
     --color-tertiary: #93c5fd;
+
+    /* dark */
+    --color-darkBackground: #0f172a;
+    --color-secDarkBackground: #1e293b;
+    --color-darkText: #f8fafc;
+    --color-darkPrimary: #0ea5e9;
+    --color-darkSecondary: #38bdf8;
+    --color-darkTertiary: #7dd3fc;
 
     /* text sizes */
     --text-ssm: 12px;  

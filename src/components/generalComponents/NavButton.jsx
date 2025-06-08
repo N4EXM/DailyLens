@@ -11,8 +11,8 @@ const NavButton = ({icon, link}) => {
   let location = useLocation()
 
   return (
-    <button className={`border-b-2 ${location.pathname == link ? "border-b-primary":"border-b-background/10"} font-medium p-1 flex items-center justify-center flex-col`} onClick={() => handleNavigate(link)}>
-      <i className={`${location.pathname == link ? "text-primary":"text-text"}`}>{icon}</i>
+    <button className={`border-b-2 ${location.pathname == link ? "border-b-primary dark:border-b-darkPrimary":"border-secBackground dark:border-secDarkBackground"} font-medium p-1 flex items-center justify-center flex-col`} onClick={() => handleNavigate(link)}>
+      <i className={`${location.pathname == link ? "text-primary dark:text-darkPrimary":"text-text dark:text-darkText"}`}>{icon}</i>
     </button>
   )
 }

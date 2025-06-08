@@ -28,7 +28,7 @@ const articles = [
         authorName: "John Doe",
         authorImage: userImage,
         date: "22/03/12",
-        category: "Tech"
+        category: ["Tech", "Recommended"]
     },
     {
         id: 1,
@@ -38,7 +38,7 @@ const articles = [
         authorName: "Sarah Johnson",
         authorImage: userImage,
         date: "23/05/15",
-        category: "Gaming"
+        category: ["Gaming", "Recommended"]
     },
     {
         id: 2,
@@ -48,7 +48,7 @@ const articles = [
         authorName: "Michael Chen",
         authorImage: userImage,
         date: "23/05/10",
-        category: "Finance"
+        category: ["Finance"]
     },
     {
         id: 3,
@@ -58,7 +58,7 @@ const articles = [
         authorName: "Dr. Emily Wilson",
         authorImage: userImage,
         date: "23/05/08",
-        category: "Health"
+        category: ["Health"]
     },
     {
         id: 4,
@@ -68,7 +68,7 @@ const articles = [
         authorName: "Alex Rivera",
         authorImage: userImage,
         date: "23/05/05",
-        category: "Recommended"
+        category: ["Tech","Recommended"]
     },
     {
         id: 5,
@@ -78,7 +78,7 @@ const articles = [
         authorName: "Kevin Zhang",
         authorImage: userImage,
         date: "23/05/18",
-        category: "Gaming"
+        category: ["Gaming"]
     },
     {
         id: 6,
@@ -88,7 +88,7 @@ const articles = [
         authorName: "Jessica Williams",
         authorImage: userImage,
         date: "23/05/12",
-        category: "Finance"
+        category: ["Finance"]
     },
     {
         id: 7,
@@ -98,7 +98,7 @@ const articles = [
         authorName: "Dr. Robert Klein",
         authorImage: userImage,
         date: "23/05/03",
-        category: "Health"
+        category: ["Health"]
     },
     {
         id: 8,
@@ -108,7 +108,7 @@ const articles = [
         authorName: "Lisa Park",
         authorImage: userImage,
         date: "23/05/20",
-        category: "Recommended"
+        category: ["Tech","Recommended"]
     },
     {
         id: 9,
@@ -118,7 +118,7 @@ const articles = [
         authorName: "Chris Roberts",
         authorImage: userImage,
         date: "23/09/10",
-        category: "Gaming"
+        category: ["Gaming"]
     },
     {
         id: 10,
@@ -128,7 +128,7 @@ const articles = [
         authorName: "Daniel Lee",
         authorImage: userImage,
         date: "23/08/22",
-        category: "Finance"
+        category: ["Finance"]
     },
     {
         id: 11,
@@ -138,7 +138,7 @@ const articles = [
         authorName: "Dr. Rachel Adams",
         authorImage: userImage,
         date: "23/07/15",
-        category: "Health"
+        category: ["Health"]
     },
     {
         id: 12,
@@ -148,7 +148,7 @@ const articles = [
         authorName: "Priya Patel",
         authorImage: userImage,
         date: "23/09/05",
-        category: "Tech"
+        category: ["Tech"]
     },
     {
         id: 13,
@@ -158,7 +158,7 @@ const articles = [
         authorName: "Marcus Cole",
         authorImage: userImage,
         date: "23/08/30",
-        category: "Entertainment"
+        category: ["Entertainment"]
     },
     {
         id: 14,
@@ -168,7 +168,7 @@ const articles = [
         authorName: "Sophia Nguyen",
         authorImage: userImage,
         date: "23/07/20",
-        category: "Lifestyle"
+        category: ["Health"]
     },
     {
         id: 15,
@@ -178,7 +178,7 @@ const articles = [
         authorName: "Dr. Neil Carter",
         authorImage: userImage,
         date: "23/09/12",
-        category: "Science"
+        category: ["Science"]
     },
     {
         id: 16,
@@ -188,7 +188,7 @@ const articles = [
         authorName: "Olivia Martinez",
         authorImage: userImage,
         date: "23/08/05",
-        category: "Finance"
+        category: ["Finance"]
     },
     {
         id: 17,
@@ -198,7 +198,7 @@ const articles = [
         authorName: "Jordan Kim",
         authorImage: userImage,
         date: "23/07/25",
-        category: "Recommended"
+        category: ["Health","Recommended"]
     },
     {
         id: 18,
@@ -208,7 +208,7 @@ const articles = [
         authorName: "Dr. Hannah Lee",
         authorImage: userImage,
         date: "23/08/18",
-        category: "Health"
+        category: ["Health"]
     }
 ];
 

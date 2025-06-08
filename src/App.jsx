@@ -13,7 +13,7 @@ function App() {
 
   return (
     <>
-      <div className='w-full h-full min-h-screen font-poppins bg-background text-text relative'>
+      <div className='w-full h-full min-h-screen font-poppins bg-background dark:bg-darkBackground text-text dark:text-darkText relative'>
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<Home/>}></Route>

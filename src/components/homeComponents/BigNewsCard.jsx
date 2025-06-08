@@ -3,18 +3,19 @@ import articles from '../../articles'
 
 const BigNewsCard = ({articleImage, title, authorImage, authorName, date}) => {
   return (
-    <div className='relative text-background'>
+    <div className='relative text-background overflow-y-clip'>
 
-      <div className='relative w-64'>
+      <div className='relative aspect-3/2 w-full h-44'>
         <img 
           src={articleImage} 
           className='rounded-xl w-full h-full object-cover' 
+          alt="Article cover"
         />
         {/* Gradient overlay */}
         <div className='absolute inset-0 bg-gradient-to-t from-black/70 to-transparent rounded-xl'></div>
       </div>
 
-      <div className='absolute top-[37%] flex flex-col gap-2 p-3 pr-4'>
+      <div className='absolute bottom-0.5 flex flex-col gap-2 p-3 pr-4 text-background '>
         <p className='font-semibold font-poppins text-ssm'>{title}</p>
         <div className='w-full h-fit flex flex-row items-center justify-between'>
 
@@ -23,7 +24,7 @@ const BigNewsCard = ({articleImage, title, authorImage, authorName, date}) => {
             <p className='text-xxs font-light'>{authorName}</p>
           </div>
 
-          <p className='font-light text-background text-xxs'>{date}</p>
+          <p className='font-light text-xxs'>{date}</p>
 
         </div>
       </div>

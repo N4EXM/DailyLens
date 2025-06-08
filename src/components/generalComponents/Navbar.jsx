@@ -32,9 +32,9 @@ const Navbar = () => {
   ]
 
   return (
-    <div className='w-full h-fit p-5 fixed bottom-0 right-0 left-0'>
+    <div className='w-full h-fit p-5 fixed bottom-0 right-0 left-0 z-50'>
       
-      <div className='p-2 px-4 flex flex-row bg-text/10 border-2 border-text/5 rounded-3xl text-xs items-center justify-between'>
+      <div className='p-2 px-4 flex flex-row bg-secBackground dark:bg-secDarkBackground border-2 border-text/10 dark:border-darkText/10 rounded-3xl text-xs items-center justify-between'>
         <NavButton
           icon={navButton[0].icon}
           link={navButton[0].link}
