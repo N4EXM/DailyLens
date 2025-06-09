@@ -35,16 +35,18 @@ const Navbar = () => {
     <div className='w-full h-fit p-5 fixed bottom-0 right-0 left-0 z-50'>
       
       <div className='p-2 px-4 flex flex-row bg-secBackground dark:bg-secDarkBackground border-2 border-text/10 dark:border-darkText/10 rounded-3xl text-xs items-center justify-between'>
+        {/* home button */}
         <NavButton
           icon={navButton[0].icon}
           link={navButton[0].link}
         />
+        {/* bookmark button */}
         <NavButton
           icon={navButton[1].icon}
           link={navButton[1].link}
         />
         {/* create post button */}
-        <button className='flex flex-row bg-primary/80 gap-3 pr-5 text-white p-2 items-center justify-start  rounded-full'>
+        <button className='flex flex-row bg-primary/80 dark:bg-darkPrimary/80 gap-3 pr-5 text-white p-2 items-center justify-start  rounded-full'>
           <i className='rounded-full text-background flex'>
             <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20"  
               fill="currentColor" viewBox="0 0 24 24" >
@@ -53,6 +55,7 @@ const Navbar = () => {
           </i>
           <p className='font-medium'>Create</p>
         </button>
+        {/* settings button */}
         <NavButton
           icon={navButton[2].icon}
           link={navButton[2].link}

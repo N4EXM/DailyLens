@@ -2,6 +2,15 @@ import React, { useEffect,useState } from 'react'
 
 const NewsCard = ({articleImage, authorImage, title, authorName, date, category}) => {
 
+    const truncateText = (str, maxLength) => {
+        if (str.length > maxLength && window.innerWidth < 360) {
+            return str.substring(0, maxLength) + '...';
+        }
+        else {
+            return str
+        }
+    }
+
   return (
     <div className='flex gap-2 w-full h-full min-h-[84px] rounded-lg'> 
         {/* Image container (fixed height) */}
@@ -13,7 +22,7 @@ const NewsCard = ({articleImage, authorImage, title, authorName, date, category}
         <div className='flex flex-col justify-between h-full gap-2 min-h-full grow'>
             <div className='h-full'>
                 <p className='text-[8px] font-light '>{category}</p>
-                <p className='text-xs font-medium h-11'>{title}</p>
+                <p className='text-xs font-medium h-11'>{truncateText(title, 50)}</p>
             </div>
             
             <div className='flex items-center justify-between w-full'>
