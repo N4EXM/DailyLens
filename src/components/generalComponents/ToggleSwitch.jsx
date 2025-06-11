@@ -14,7 +14,7 @@ const ToggleSwitch = () => {
         />
         <div className={`
           relative h-6 w-12 rounded-full 
-          ${isActive ? 'bg-primary dark:bg-darkPrimary' : 'bg-background dark:bg-darkBackground'}
+          ${isActive ? 'bg-primary dark:bg-darkPrimary' : 'bg-darkBackground/20 dark:bg-background/20'}
           shadow-[inset_0_1px_4px_rgba(0,0,0,0.1)] 
           transition-all duration-300 
           after:absolute after:left-0.5 after:top-0.5 

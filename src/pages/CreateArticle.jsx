@@ -1,0 +1,77 @@
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
+
+const CreateArticle = () => {
+
+    const navigate = useNavigate()
+    
+    const handleNavigate = () => {
+        navigate(-1)
+    }
+
+    const [title, setTitle] = useState("")
+    const [selectedImage, setSelectedImage] = useState(null)
+    const [preview, setPreview] = useState(null)
+
+    const handleImageChange = (e) => {
+        const file = e.target.files[0];
+        if (file) {
+        setSelectedImage(file);
+        // Generate preview URL
+        const reader = new FileReader();
+        reader.onloadend = () => setPreview(reader.result);
+        reader.readAsDataURL(file);
+        }
+    };
+
+  return (
+    <div className='w-full h-full p-5 flex flex-col gap-5 pb-24 z-20 relative'>
+        
+        {/* go back to previous page */}
+        <button onClick={() => handleNavigate()} className='p-2 rounded-full w-fit bg-secBackground dark:bg-secDarkBackground'>
+            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"  
+                fill="currentColor" viewBox="0 0 24 24" >
+                <path d="M11.79 6.29 6.09 12l5.7 5.71 1.42-1.42L9.91 13H18v-2H9.91l3.3-3.29z"></path>
+            </svg>
+        </button>
+
+        {preview != null ?
+
+            <div className='w-full h-44 aspect-3/2'>
+                <img src={preview} alt="" className='rounded w-full h-full object-cover'/>
+            </div>
+        :
+
+            <div className='w-full h-44 bg-secBackground dark:bg-secDarkBackground rounded flex items-center justify-center flex-col border-text/20 dark:border-darkText/20 border-2'>
+                <input 
+                    type="file"
+                    accept='images/*'
+                    onChange={handleImageChange}
+                    className='hidden w-full h-full '
+                    id='image-upload'
+                />
+                <label className='text-text/60 cursor-pointer dark:text-darkText/60 w-full h-full flex items-center justify-center flex-col gap-1' htmlFor="image-upload">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"  
+                        fill="currentColor" viewBox="0 0 24 24" >
+                        <path d="M21 14V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9v-2H5v-1.59l3-3 1.29 1.29c.39.39 1.02.39 1.41 0l5.29-5.29 3 3V14h2Zm-4.29-5.71a.996.996 0 0 0-1.41 0l-5.29 5.29-1.29-1.29a.996.996 0 0 0-1.41 0l-2.29 2.29V5h14v5.59L16.73 8.3Z"></path><path d="M8.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 1 0 0-3M21 16h-2v3h-3v2h3v3h2v-3h3v-2h-3z"></path>
+                    </svg>
+                    <span className='text-xs'>Add image</span>
+                </label>
+            </div>
+
+        }
+
+        {/* <textarea
+            type="text" 
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            placeholder='Title...'  
+            maxLength={128}
+            className='w-full font-bold outline-none border-text/20 dark:border-darkText/20 border-2 p-2 pl-3 rounded bg-secBackground dark:bg-secDarkBackground resize-none h-24'  
+        /> */}
+
+    </div>
+  )
+}
+
+export default CreateArticle
