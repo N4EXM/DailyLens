@@ -43,7 +43,7 @@ const Navbar = () => {
   return (
     <div className={`w-full h-fit p-5 fixed bottom-0 right-0 left-0 z-50 ${location.pathname === "/CreateArticle" ? "hidden" : "block"}`}>
       
-      <div className='p-2 px-4 flex flex-row bg-secBackground dark:bg-secDarkBackground border border-primary dark:border-darkPrimary rounded-xl text-xs items-center justify-between'>
+      <div className='p-2 px-4 flex flex-row bg-secBackground dark:bg-secDarkBackground border border-text/20 dark:border-darkText/20 rounded-xl text-xs items-center justify-between'>
         {/* home button */}
         <NavButton
           icon={navButton[0].icon}

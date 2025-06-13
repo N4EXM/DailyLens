@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAutoResizeTextarea } from '../hooks/useAutoResizeTextArea'
 
@@ -15,6 +15,9 @@ const CreateArticle = () => {
     const [content, setContent] = useState("")  // article content
     const [selectedImage, setSelectedImage] = useState(null) // 
     const [preview, setPreview] = useState(null) // preview the current image
+
+    const [dropCategoryActive, setDropCategoryActive] = useState(false)
+    const dropDownRef = useRef(null)
     const fileInputRef = useRef(null); // Ref to access the file input
     const [isWarningBoxActive, setIsWarningBoxActive] = useState(false)
     const textAreaRef = useAutoResizeTextarea(content) // textArea hook
@@ -57,11 +60,11 @@ const CreateArticle = () => {
         e.preventDefault()
         const file = e.target.files[0];
         if (file) {
-        setSelectedImage(file);
-        // Generate preview URL
-        const reader = new FileReader();
-        reader.onloadend = () => setPreview(reader.result);
-        reader.readAsDataURL(file);
+            setSelectedImage(file);
+            // Generate preview URL
+            const reader = new FileReader();
+            reader.onloadend = () => setPreview(reader.result);
+            reader.readAsDataURL(file);
         }
     };
 
@@ -75,7 +78,27 @@ const CreateArticle = () => {
     const handleCategory = (category) => {
         setSelectedCategory(category)
         console.log(selectedCategory)
+        setDropCategoryActive(false)
     }
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropDownRef.current && !dropDownRef.current.contains(event.target)) {
+                setDropCategoryActive(false)
+            }
+        };
+
+        // Add event listener when dropdown is active
+        if (dropCategoryActive) {
+            document.addEventListener('mousedown', handleClickOutside);
+        }
+
+        // Cleanup function
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, [dropCategoryActive]);
 
   return (
     <div className='w-full h-full p-5 flex flex-col gap-5 z-10 relative'>
@@ -94,7 +117,7 @@ const CreateArticle = () => {
                     <button onClick={() => setIsWarningBoxActive(false)} className='w-full p-2 bg-secBackground font-medium dark:bg-secBackground/5 h-fit border border-text/20 dark:border-darkText/20 rounded-sm'>
                         Cancel
                     </button>
-                    <button onClick={() => handleNavigate()} className='bg-rose-500 border border-rose-500 w-full h-fit text-darkText font-medium rounded-sm p-2'> 
+                    <button onClick={() => handleNavigate()} className='bg-rose-600 border border-rose-600 w-full h-fit text-darkText font-medium rounded-sm p-2'> 
                         Exit
                     </button>
                 </div>
@@ -147,19 +170,19 @@ const CreateArticle = () => {
         {/* category selection */}
         <div className='w-full h-fit flex flex-col gap-2 text-sm relative bg-secBackground dark:bg-secDarkBackground p-3 rounded-sm border border-text/20 dark:border-darkText/20'>
             
-            <div className='w-full h-fit flex flex-row items-center justify-between'>
+            <button onClick={() => setDropCategoryActive(!dropCategoryActive)} className='w-full h-fit flex flex-row items-center justify-between'>
                 <h1 className='text-ssm'>{selectedCategory}</h1>
                 <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16"  
                     fill="currentColor" viewBox="0 0 24 24" >
                     <path d="m12 15.41 5.71-5.7-1.42-1.42-4.29 4.3-4.29-4.3-1.42 1.42z"></path>
                 </svg>
-            </div>
+            </button>
 
-            <div className='dark:bg-secDarkBackground -bottom-48 left-0 w-full h-fit rounded-sm border border-text/20 dark:border-darkText/20 bg-secBackground absolute flex flex-col divide-y-1 divide-text/20 dark:divide-darkText/20'>
+            <div ref={dropDownRef} className={`${dropCategoryActive ? "flex" : "hidden"} dark:bg-secDarkBackground -bottom-44 left-0 w-full h-fit rounded-sm border border-text/20 dark:border-darkText/20 bg-secBackground absolute flex flex-col divide-y-1 divide-text/20 dark:divide-darkText/20`}>
                 {categories.map((category) => (
                     <button onClick={() => handleCategory(category.category)} key={category.category} className='active:bg-primary/10 flex p-3 px-4 flex-row items-center gap-4 '>
                         <i className='text-primary dark:text-darkPrimary'>{category.icon}</i>
-                        <p>{category.category}</p>
+                        <p className='text-ssm'>{category.category}</p>
                     </button>
                 ))}
             </div>

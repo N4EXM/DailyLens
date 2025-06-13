@@ -23,7 +23,7 @@ const UserCard = ({ userDetails }) => {
           
         </div>
 
-        <div className='flex flex-row items-start gap-5 justify-start'>
+        <div className='flex flex-row items-start gap-4 justify-start'>
           
           <div className='relative'>
             <div className={`w-16 h-16 object-center ${userDetails.image === null ? "" : "p-1"} rounded-full bg-background dark:bg-darkBackground border-2 border-primary dark:border-darkPrimary`}>
@@ -39,12 +39,6 @@ const UserCard = ({ userDetails }) => {
                   <img src={userDetails.image} className='w-full h-full rounded-full' alt="" />
               }
             </div>
-            <button className='bg-primary object-contain dark:bg-darkPrimary absolute p-1.5 -right-1 -bottom-2 rounded-full'>
-              <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16"  
-                fill="#ffffff" viewBox="0 0 24 24" >
-                <path d="M21 14V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h9v-2H5v-1.59l3-3 1.29 1.29c.39.39 1.02.39 1.41 0l5.29-5.29 3 3V14h2ZM8.5 10C7.67 10 7 9.33 7 8.5S7.67 7 8.5 7s1.5.67 1.5 1.5S9.33 10 8.5 10"></path><path d="M21 16h-2v3h-3v2h3v3h2v-3h3v-2h-3z"></path>
-              </svg>
-            </button>
           </div>  
           <div className='w-fit gap-0.5 h-full flex flex-col items-start justify-start'>
             <h1 className='font-bold text-lg'>{userDetails.firstName} {userDetails.lastName}</h1>
