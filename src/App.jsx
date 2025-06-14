@@ -8,6 +8,9 @@ import Settings from './pages/Settings'
 import Bookmarked from './pages/Bookmarked'
 import Navbar from './components/generalComponents/Navbar';
 import CreateArticle from './pages/CreateArticle';
+import Login from './pages/Login'
+import SignUp from './pages/SignUp'
+import UserEdit from './pages/UserEdit';
 
 function App() {
 
@@ -23,6 +26,9 @@ function App() {
             <Route path='/Bookmarked' element={<Bookmarked/>}></Route>
             <Route path='/News' element={<News/>}></Route>
             <Route path='/CreateArticle' element={<CreateArticle/>}></Route>
+            <Route path='/login' element={<Login/>}></Route>
+            <Route path='/SignUp' element={<SignUp/>}></Route>
+            <Route path='/UserEdit' element={<UserEdit/>}></Route>
           </Routes>
           <Navbar/>
         </BrowserRouter>

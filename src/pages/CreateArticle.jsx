@@ -114,10 +114,10 @@ const CreateArticle = () => {
                 </div>
                 
                 <div className='w-full h-full flex items-end p-2 flex-row gap-2'>
-                    <button onClick={() => setIsWarningBoxActive(false)} className='w-full p-2 bg-secBackground font-medium dark:bg-secBackground/5 h-fit border border-text/20 dark:border-darkText/20 rounded-sm'>
+                    <button onClick={() => setIsWarningBoxActive(false)} className='w-full p-2 bg-secBackground font-medium dark:bg-secBackground/5 h-fit border border-text/20 dark:border-darkText/20 text-sm rounded-sm'>
                         Cancel
                     </button>
-                    <button onClick={() => handleNavigate()} className='bg-rose-600 border border-rose-600 w-full h-fit text-darkText font-medium rounded-sm p-2'> 
+                    <button onClick={() => handleNavigate()} className='bg-rose-600 border border-rose-600 w-full h-fit text-darkText font-medium rounded-sm p-2 text-sm'> 
                         Exit
                     </button>
                 </div>
@@ -135,7 +135,7 @@ const CreateArticle = () => {
 
         {preview != null ?
             <div className='w-full h-full relative'>
-                <button onClick={() => handleRemoveImage()} className='p-1 absolute right-3 top-3 z-20 bg-background/60 w-fit rounded-full cursor-pointer'>
+                <button onClick={() => handleRemoveImage()} className='p-2 absolute right-3 top-3 z-20 bg-darkBackground/80 w-fit rounded-full cursor-pointer'>
                     <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16"  
                         fill="currentColor" viewBox="0 0 24 24"  
                         transform="scale(1,-1) rotate(45)">
@@ -186,7 +186,6 @@ const CreateArticle = () => {
                     </button>
                 ))}
             </div>
-
 
         </div>
         

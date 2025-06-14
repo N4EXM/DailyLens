@@ -41,7 +41,7 @@ const Navbar = () => {
   ]
 
   return (
-    <div className={`w-full h-fit p-5 fixed bottom-0 right-0 left-0 z-50 ${location.pathname === "/CreateArticle" ? "hidden" : "block"}`}>
+    <div className={`w-full h-fit p-5 fixed bottom-0 right-0 left-0 z-50 ${location.pathname === "/CreateArticle" || location.pathname === "/Login" || location.pathname === "/SignUp" || location.pathname === "/UserEdit" ? "hidden" : "block"}`}>
       
       <div className='p-2 px-4 flex flex-row bg-secBackground dark:bg-secDarkBackground border border-text/20 dark:border-darkText/20 rounded-xl text-xs items-center justify-between'>
         {/* home button */}
@@ -57,7 +57,7 @@ const Navbar = () => {
           link={navButton[1].link}
         />
         {/* create post button */}
-        <button onClick={() => handleNavigate("/CreateArticle")} className='flex flex-row bg-primary dark:bg-darkPrimary gap-3 pr-5 text-white p-2 items-center justify-start  rounded-full'>
+        <button onClick={() => handleNavigate("/CreateArticle")} className='flex flex-row bg-primary dark:bg-darkPrimary gap-3 pr-5 text-white p-2 items-center justify-start  rounded-lg'>
           <i className='rounded-full text-background flex'>
             <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20"  
               fill="currentColor" viewBox="0 0 24 24" >

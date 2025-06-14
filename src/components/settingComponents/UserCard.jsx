@@ -1,19 +1,21 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const UserCard = ({ userDetails }) => {
+const UserCard = ({ userDetails, editFunction, toggleWarningBox }) => {
+
   return (
-    <div className='flex flex-col p-5 gap-2 bg-secBackground dark:bg-secDarkBackground rounded-md'>
+    <div className='flex flex-col p-5 gap-2 bg-secBackground dark:bg-secDarkBackground rounded-md relative'>
 
         <div className='w-full flex items-start justify-between'>
           <p className='font-semibold '>User Details</p>
           <div className='w-fit  gap-2 flex flex-row items-center'>
-            <button className='bg-primary dark:bg-darkPrimary p-2 rounded-full active:bg-secondary dark:active:bg-darkSecondary duration-200'>
+            <button onClick={editFunction} className='bg-primary dark:bg-darkPrimary p-2 rounded-full active:bg-secondary dark:active:bg-darkSecondary duration-200'>
               <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20"  
                 fill="#ffffff" viewBox="0 0 24 24" >
                 <path d="M11 18h11v2H11zM13.29 4.29 11.5 6.08l4.41 4.41L17.7 8.7a.996.996 0 0 0 0-1.41l-3-3a.996.996 0 0 0-1.41 0M10.09 7.5 2.3 15.29a1 1 0 0 0-.29.71v3c0 .55.45 1 1 1h3c.27 0 .52-.11.71-.29l7.79-7.79-4.41-4.41Z"></path>
               </svg>
             </button>
-            <button className='p-2 bg-rose-500 dark:bg-red-500 rounded-full active:bg-rose-400 dark:active:bg-red-400 duration-200 text-white'>
+            <button onClick={toggleWarningBox} className='p-2 bg-rose-500 dark:bg-red-500 rounded-full active:bg-rose-400 dark:active:bg-red-400 duration-200 text-white'>
               <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20"  
                 fill="currentColor" viewBox="0 0 24 24" >
                 <path d="M9 13h7v-2H9V7l-6 5 6 5z"></path><path d="M19 3h-7v2h7v14h-7v2h7c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2"></path>
