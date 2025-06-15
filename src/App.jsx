@@ -11,6 +11,8 @@ import CreateArticle from './pages/CreateArticle';
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import UserEdit from './pages/UserEdit';
+import Sidebar from './components/generalComponents/Sidebar';
+import Article from './pages/Article'
 
 function App() {
 
@@ -29,8 +31,9 @@ function App() {
             <Route path='/login' element={<Login/>}></Route>
             <Route path='/SignUp' element={<SignUp/>}></Route>
             <Route path='/UserEdit' element={<UserEdit/>}></Route>
+            <Route path='/Article/:id' element={<Article/>}></Route>
           </Routes>
-          <Navbar/>
+          <Sidebar/>
         </BrowserRouter>
       </div>
     </>

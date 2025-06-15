@@ -206,14 +206,12 @@ const UserEdit = () => {
                 }
               </button>
             </div>
-
-            <button 
-              className='font-medium p-2 text-darkText bg-primary dark:bg-darkPrimary mt-4 rounded-md'
-            >
-              Save
-            </button>
           </div>
-
+          <button 
+            className='font-medium p-2 w-full text-darkText bg-primary dark:bg-darkPrimary mt-4 rounded-md'
+          >
+            Save
+          </button>
         </div>
 
     </div>

@@ -91,6 +91,7 @@ fill="currentColor" viewBox="0 0 24 24" >
           <p className='font-semibold text-lg text-darkText'>What's New</p>
         </div>
 
+        {/* search button link */}
         <button onClick={() => handleSearchNavigate()} className='text-darkText'>
           <svg  xmlns="http://www.w3.org/2000/svg" width="24" height="24"  
             fill="currentColor" viewBox="0 0 24 24" >
@@ -105,15 +106,18 @@ fill="currentColor" viewBox="0 0 24 24" >
         {firstThreeArticles.map((article,_) => (
           <BigNewsCard
             key={article.id}
+            id={article.id}
             articleImage={article.articleImage}
             authorImage={article.authorImage}
             title={article.title}
             authorName={article.authorName}
             date={article.date}
+            content={article.content}
           />
         ))}
       </div>
 
+      {/* different category buttons */}
       <div className='w-full overflow-x-scroll flex flex-row items-center gap-3 scrollbar-hide'>
         {categoryButtons.map((category, _) => (
           <CategoryButton
@@ -126,16 +130,19 @@ fill="currentColor" viewBox="0 0 24 24" >
         ))}
       </div>
 
+      {/* article cards */}
       <div className="flex flex-col w-full h-full gap-2">
         {filteredArticles.map((article, _) => (
           <NewsCard
             key={article.id}
+            id={article.id}
             articleImage={article.articleImage}
             authorImage={article.authorImage}
             title={article.title}
             authorName={article.authorName}
             date={article.date}
             category={article.category[0]}
+            content={article.content}
           />
         ))}
       </div>

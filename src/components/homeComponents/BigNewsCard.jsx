@@ -1,9 +1,28 @@
 import React from 'react'
-import articles from '../../articles'
+import { useNavigate } from 'react-router-dom'
 
-const BigNewsCard = ({articleImage, title, authorImage, authorName, date}) => {
+const BigNewsCard = ({articleImage, title, authorImage, authorName, date, content, id}) => {
+
+  const navigate = useNavigate()
+
+  const handleCardNavigate = () => {
+
+    navigate(`Article/${id}`, {
+      state: {
+        articleImage: articleImage,
+        title: title,
+        authorImage: authorImage,
+        authorName: authorName,
+        date: date,
+        content: content,
+        id: id
+      }
+    })
+
+  }
+
   return (
-    <div className='relative text-background overflow-y-clip'>
+    <div className='relative text-background overflow-y-clip' onClick={() => handleCardNavigate()}>
 
       <div className='relative aspect-3/2 w-full h-44'>
         <img 

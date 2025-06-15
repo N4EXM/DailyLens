@@ -1,6 +1,25 @@
 import React, { useEffect,useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
-const NewsCard = ({articleImage, authorImage, title, authorName, date, category}) => {
+const NewsCard = ({articleImage, authorImage, title, authorName, date, category, content, id}) => {
+
+    const navigate = useNavigate()
+
+    const handleCardNavigate = () => {
+
+        navigate(`Article/${id}`, {
+        state: {
+            articleImage: articleImage,
+            title: title,
+            authorImage: authorImage,
+            authorName: authorName,
+            date: date,
+            content: content,
+            id: id
+        }
+        })
+
+    }
 
     const truncateText = (str, maxLength) => {
         if (str.length > maxLength && window.innerWidth < 360) {
@@ -11,8 +30,12 @@ const NewsCard = ({articleImage, authorImage, title, authorName, date, category}
         }
     }
 
+
+
   return (
-    <div className='flex gap-2 w-full h-full min-h-[84px] rounded-lg'> 
+    <div 
+        onClick={() => handleCardNavigate()}
+        className='flex gap-2 w-full h-full min-h-[84px] rounded-lg'> 
         {/* Image container (fixed height) */}
         <div className='relative aspect-3/2 h-20 mmo:h-[84px] shrink-0'>
             <img src={articleImage} alt="" className='rounded-xl w-full h-full object-cover' />
